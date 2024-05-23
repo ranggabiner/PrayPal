@@ -76,17 +76,15 @@ struct ClockInButtonView: View {
             return
         }
 
-        // Schedule first notification
-        scheduleNotification(at: scheduledTime, withTitle: "Peringatan Sholat", subtitle: "Anda belum Sholat")
-
-        // Calculate time for second notification (5 minutes after the first)
-        guard let secondScheduledTime = calendar.date(byAdding: .minute, value: 5, to: scheduledTime) else {
-            print("Failed to calculate time for second notification.")
-            return
+        // Schedule notifications three times with 5 minutes interval
+        let intervals = [0, 1, 3, 4, 6] // in minutes
+        for interval in intervals {
+            guard let notificationDate = calendar.date(byAdding: .minute, value: interval, to: scheduledTime) else {
+                print("Failed to calculate notification time for interval \(interval) minutes.")
+                continue
+            }
+            scheduleNotification(at: notificationDate, withTitle: "Peringatan Sholat", subtitle: "Anda belum Sholat")
         }
-
-        // Schedule second notification
-        scheduleNotification(at: secondScheduledTime, withTitle: "Peringatan Sholat", subtitle: "Anda masih belum Sholat")
     }
 
     func scheduleNotification(at date: Date, withTitle title: String, subtitle: String) {

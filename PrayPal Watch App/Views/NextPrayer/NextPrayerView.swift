@@ -18,6 +18,7 @@ struct NextPrayerView: View {
             }
             Spacer()
             NextPrayerTimeView(prayerTime: $prayerTime)
+            ClockInButtonView()
             Spacer()
             FooterView()
         }
