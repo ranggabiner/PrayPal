@@ -2,9 +2,8 @@
 //  NextPrayerTimeModel.swift
 //  PrayPal Watch App
 //
-//  Created by Rangga Biner on 23/05/24.
+//  Created by Rangga Biner on 21/05/24.
 //
-
 
 import Foundation
 

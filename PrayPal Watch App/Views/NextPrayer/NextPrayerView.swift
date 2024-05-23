@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NextPrayerView: View {
+    @State private var prayerTime: String = "Loading..."
+    
     var body: some View {
         VStack {
             HStack {
@@ -15,7 +17,7 @@ struct NextPrayerView: View {
                 Spacer()
             }
             Spacer()
-            NextPrayerTimeView()
+            NextPrayerTimeView(prayerTime: $prayerTime)
             Spacer()
             FooterView()
         }

@@ -1,28 +1,21 @@
-////
-////  NextPrayerTimeView.swift
-////  PrayPal Watch App
-////
-////  Created by Rangga Biner on 23/05/24.
-////
 //
+//  NextPrayerTimeNotifView.swift
+//  PrayPal Watch App
+//
+//  Created by Rangga Biner on 23/05/24.
+//
+
 import SwiftUI
 
-struct NextPrayerTimeView: View {
+struct NextPrayerTimeNotifView: View {
     @StateObject private var locationManager = NextPrayerTimeLocationManager()
-    @Binding var prayerTime: String
+    @Binding var prayerTimeNotif: String
     @State private var nextPrayerName: String = "Loading..."
     @State private var timer: Timer? = nil
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(nextPrayerName)
-                .fontWeight(.medium)
-                .font(.system(size: 24))
-                .foregroundStyle(Color(.white))
-            Text(prayerTime)
-                .fontWeight(.semibold)
-                .font(.system(size: 34))
-                .foregroundStyle(Color(.green))
+        Text("i")
         }
         .onAppear {
             startTimer()
@@ -52,10 +45,10 @@ struct NextPrayerTimeView: View {
 
         if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
             let nextPrayerInfo = getNextPrayerInfo(currentTime: Date(), prayerTimes: prayerTimes)
-            prayerTime = nextPrayerInfo.time
+            prayerTimeNotif = nextPrayerInfo.time
             nextPrayerName = nextPrayerInfo.name
         } else {
-            prayerTime = "Error loading prayer times"
+            prayerTimeNotif = "Error loading prayer times"
             nextPrayerName = "Error"
         }
     }
@@ -101,5 +94,5 @@ struct NextPrayerTimeView: View {
 }
 
 #Preview {
-    NextPrayerTimeView(prayerTime: .constant("Loading..."))
+    NextPrayerTimeNotifView(prayerTimeNotif: .constant("Loading..."))
 }
