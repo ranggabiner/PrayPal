@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ClockInView: View {
+    @State var isPrayed: Bool = false
+    
     var body: some View {
         VStack {
             HStack {

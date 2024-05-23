@@ -9,7 +9,11 @@ import SwiftUI
 
 struct NextPrayerView: View {
     @State private var prayerTime: String = "Loading..."
+    @AppStorage("currentPage") var currentPage: String = "NextPrayerView"
     
+    // Timer to check the current time every second
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         VStack {
             HStack {
@@ -18,7 +22,6 @@ struct NextPrayerView: View {
             }
             Spacer()
             NextPrayerTimeView(prayerTime: $prayerTime)
-            ClockInButtonView()
             Spacer()
             FooterView()
         }
@@ -27,6 +30,21 @@ struct NextPrayerView: View {
         .padding(.leading, 10)
         .padding(.trailing, 10)
         .ignoresSafeArea()
+        .onReceive(timer) { _ in
+            checkPrayerTime()
+        }
+    }
+
+    // Function to check if the current time matches the prayer time notification
+    func checkPrayerTime() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm" // Assuming prayerTimeNotif is in "HH:mm" format
+        
+        let currentTime = formatter.string(from: Date())
+        
+        if currentTime == prayerTime {
+            currentPage = "ClockInView"
+        }
     }
 }
 

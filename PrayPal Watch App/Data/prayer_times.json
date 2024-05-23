@@ -4,13 +4,26 @@
     "city": "San Francisco",
     "date": "23/05/24",
     "imsak": "04:27",
-    "fajr": "01:00",
+    "fajr": "04:37",
     "sunrise": "05:53",
     "duha": "06:22",
+    "dhuhr": "11:54",
+    "asr": "21:10",
+    "maghrib": "21:12",
+    "isha": "21:14"
+  },
+  {
+    "province": "CA",
+    "city": "San Francisco",
+    "date": "24/05/24",
+    "imsak": "04:27",
+    "fajr": "04:00",
+    "sunrise": "19:47",
+    "duha": "06:48",
     "dhuhr": "14:31",
     "asr": "17:05",
     "maghrib": "17:48",
-    "isha": "19:01"
+    "isha": "19:08"
   },
   {
     "province": "Banten",

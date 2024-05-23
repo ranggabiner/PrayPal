@@ -17,7 +17,9 @@ struct ContentView: View {
         case "NextPrayerView":
             NextPrayerView()
         case "ClockInView":
-            ClockInView()
+            ClockInView() 
+        case "IsPrayedView":
+            IsPrayedView()
         default:
             OnboardingView()
         }

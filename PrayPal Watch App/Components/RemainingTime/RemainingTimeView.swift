@@ -14,6 +14,7 @@ struct RemainingTimeView: View {
     @State private var nextPrayerTime: Date?
     @State private var countdownString: String = "Loading..."
     @State private var timer: Timer? = nil
+    
 
     var body: some View {
         VStack {

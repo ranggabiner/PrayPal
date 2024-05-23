@@ -36,6 +36,10 @@
 		8F14EFFE2BFEF5AC00F14DC8 /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */; };
 		8F14F0012BFEF61100F14DC8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14F0002BFEF61100F14DC8 /* LocationManager.swift */; };
 		8F91AC462BFF31F000FBF222 /* NextPrayerTimeNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91AC452BFF31F000FBF222 /* NextPrayerTimeNotifView.swift */; };
+		8FE792792BFF8B1800D60FEE /* IsPrayedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE792782BFF8B1800D60FEE /* IsPrayedTextView.swift */; };
+		8FE7927C2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7927B2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift */; };
+		8FE7927E2BFF8D5800D60FEE /* IsPrayedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7927D2BFF8D5800D60FEE /* IsPrayedView.swift */; };
+		8FE792812BFF8E1000D60FEE /* IsPrayedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE792802BFF8E1000D60FEE /* IsPrayedButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
 		8F14F0002BFEF61100F14DC8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8F91AC452BFF31F000FBF222 /* NextPrayerTimeNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerTimeNotifView.swift; sourceTree = "<group>"; };
+		8FE792782BFF8B1800D60FEE /* IsPrayedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrayedTextView.swift; sourceTree = "<group>"; };
+		8FE7927B2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeCurrentPrayerName.swift; sourceTree = "<group>"; };
+		8FE7927D2BFF8D5800D60FEE /* IsPrayedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrayedView.swift; sourceTree = "<group>"; };
+		8FE792802BFF8E1000D60FEE /* IsPrayedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrayedButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,7 @@
 		8F14EFC42BFEF26E00F14DC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8FE792742BFF8ADC00D60FEE /* IsPrayed */,
 				8F14EFFC2BFEF59E00F14DC8 /* NextPrayer */,
 				8F14EFF82BFEF57500F14DC8 /* Onboarding */,
 				8F14EFF52BFEF55800F14DC8 /* ClockIn */,
@@ -186,6 +195,8 @@
 		8F14EFC52BFEF27500F14DC8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8FE7927F2BFF8E0000D60FEE /* IsPrayedButton */,
+				8FE792772BFF8B0300D60FEE /* IsPrayedText */,
 				8F91AC442BFF31D500FBF222 /* NextPrayerTimeNotif */,
 				8F14EFEC2BFEF4DC00F14DC8 /* RemainingTime */,
 				8F14EFE92BFEF4A100F14DC8 /* OnboardingButton */,
@@ -357,6 +368,39 @@
 			path = NextPrayerTimeNotif;
 			sourceTree = "<group>";
 		};
+		8FE792742BFF8ADC00D60FEE /* IsPrayed */ = {
+			isa = PBXGroup;
+			children = (
+				8FE7927D2BFF8D5800D60FEE /* IsPrayedView.swift */,
+			);
+			path = IsPrayed;
+			sourceTree = "<group>";
+		};
+		8FE792772BFF8B0300D60FEE /* IsPrayedText */ = {
+			isa = PBXGroup;
+			children = (
+				8FE7927A2BFF8BE800D60FEE /* Manager */,
+				8FE792782BFF8B1800D60FEE /* IsPrayedTextView.swift */,
+			);
+			path = IsPrayedText;
+			sourceTree = "<group>";
+		};
+		8FE7927A2BFF8BE800D60FEE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8FE7927B2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8FE7927F2BFF8E0000D60FEE /* IsPrayedButton */ = {
+			isa = PBXGroup;
+			children = (
+				8FE792802BFF8E1000D60FEE /* IsPrayedButtonView.swift */,
+			);
+			path = IsPrayedButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,13 +522,17 @@
 				8F14EFCD2BFEF2FC00F14DC8 /* FooterView.swift in Sources */,
 				8F14EFEE2BFEF4F100F14DC8 /* RemainingTimeView.swift in Sources */,
 				8F14EFD22BFEF37700F14DC8 /* ClockInButtonView.swift in Sources */,
+				8FE792812BFF8E1000D60FEE /* IsPrayedButtonView.swift in Sources */,
 				8F14EFF12BFEF50F00F14DC8 /* RemainingTimeManager.swift in Sources */,
+				8FE7927E2BFF8D5800D60FEE /* IsPrayedView.swift in Sources */,
 				8F14EFB52BFEF25600F14DC8 /* ContentView.swift in Sources */,
 				8F14EFB32BFEF25600F14DC8 /* PrayPalApp.swift in Sources */,
+				8FE792792BFF8B1800D60FEE /* IsPrayedTextView.swift in Sources */,
 				8F14EFFA2BFEF58200F14DC8 /* OnboardingView.swift in Sources */,
 				8F91AC462BFF31F000FBF222 /* NextPrayerTimeNotifView.swift in Sources */,
 				8F14EFCF2BFEF32E00F14DC8 /* FooterDataManager.swift in Sources */,
 				8F14EFDD2BFEF3FD00F14DC8 /* NextPrayerTimeLocationManager.swift in Sources */,
+				8FE7927C2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift in Sources */,
 				8F14EFEB2BFEF4B200F14DC8 /* OnboardingButtonView.swift in Sources */,
 				8F14EFD52BFEF3A000F14DC8 /* HeaderView.swift in Sources */,
 				8F14F0012BFEF61100F14DC8 /* LocationManager.swift in Sources */,

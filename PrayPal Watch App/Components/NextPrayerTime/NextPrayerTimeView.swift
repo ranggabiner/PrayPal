@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NextPrayerTimeView: View {
+    @AppStorage("currentPage") var currentPage: String = "NextPrayerView"
     @StateObject private var locationManager = NextPrayerTimeLocationManager()
     @Binding var prayerTime: String
     @State private var nextPrayerName: String = "Loading..."
@@ -90,14 +91,20 @@ struct NextPrayerTimeView: View {
         }
 
         // If the current time is past Isha, return the time for Fajr of the next day
-        if let fajrComponents = timeToComponents(prayerTimes.fajr), let fajrDate = createDate(components: fajrComponents) {
-            let nextDayFajrDate = calendar.date(byAdding: .day, value: 1, to: fajrDate)
-            let nextPrayerTime = nextDayFajrDate != nil ? dateFormatter.string(from: nextDayFajrDate!) : "Error"
-            return (name: "Fajr", time: nextPrayerTime)
+        if let ishaComponents = timeToComponents(prayerTimes.isha), let ishaDate = createDate(components: ishaComponents), currentTime >= ishaDate {
+            if let fajrComponents = timeToComponents(prayerTimes.fajr), let fajrDate = createDate(components: fajrComponents) {
+                let nextDayFajrDate = calendar.date(byAdding: .day, value: 1, to: fajrDate)
+                if let nextDayFajrDate = nextDayFajrDate {
+                    return (name: "Fajr", time: dateFormatter.string(from: nextDayFajrDate))
+                } else {
+                    return (name: "Error", time: "Error")
+                }
+            }
         }
 
         return (name: "Error", time: "Error")
     }
+
 }
 
 #Preview {
