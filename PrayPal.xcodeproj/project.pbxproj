@@ -1,0 +1,774 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F14EFA12BFEF25500F14DC8 /* PrayPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFA02BFEF25500F14DC8 /* PrayPalApp.swift */; };
+		8F14EFA32BFEF25500F14DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFA22BFEF25500F14DC8 /* ContentView.swift */; };
+		8F14EFA52BFEF25600F14DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F14EFA42BFEF25600F14DC8 /* Assets.xcassets */; };
+		8F14EFA82BFEF25600F14DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F14EFA72BFEF25600F14DC8 /* Preview Assets.xcassets */; };
+		8F14EFAE2BFEF25600F14DC8 /* PrayPal Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8F14EFAD2BFEF25600F14DC8 /* PrayPal Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8F14EFB32BFEF25600F14DC8 /* PrayPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFB22BFEF25600F14DC8 /* PrayPalApp.swift */; };
+		8F14EFB52BFEF25600F14DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFB42BFEF25600F14DC8 /* ContentView.swift */; };
+		8F14EFB72BFEF25700F14DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F14EFB62BFEF25700F14DC8 /* Assets.xcassets */; };
+		8F14EFBA2BFEF25700F14DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F14EFB92BFEF25700F14DC8 /* Preview Assets.xcassets */; };
+		8F14EFC92BFEF2BB00F14DC8 /* HexColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFC82BFEF2BB00F14DC8 /* HexColorManager.swift */; };
+		8F14EFCD2BFEF2FC00F14DC8 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFCC2BFEF2FC00F14DC8 /* FooterView.swift */; };
+		8F14EFCF2BFEF32E00F14DC8 /* FooterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFCE2BFEF32E00F14DC8 /* FooterDataManager.swift */; };
+		8F14EFD22BFEF37700F14DC8 /* ClockInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFD12BFEF37700F14DC8 /* ClockInButtonView.swift */; };
+		8F14EFD52BFEF3A000F14DC8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFD42BFEF3A000F14DC8 /* HeaderView.swift */; };
+		8F14EFD82BFEF3C500F14DC8 /* NextPrayerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFD72BFEF3C500F14DC8 /* NextPrayerTimeView.swift */; };
+		8F14EFDB2BFEF3E400F14DC8 /* NextPrayerTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFDA2BFEF3E400F14DC8 /* NextPrayerTimeModel.swift */; };
+		8F14EFDD2BFEF3FD00F14DC8 /* NextPrayerTimeLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFDC2BFEF3FD00F14DC8 /* NextPrayerTimeLocationManager.swift */; };
+		8F14EFE32BFEF44200F14DC8 /* OnboardingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFE22BFEF44200F14DC8 /* OnboardingTextView.swift */; };
+		8F14EFE62BFEF46300F14DC8 /* GetCurrentPrayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFE52BFEF46300F14DC8 /* GetCurrentPrayerInfo.swift */; };
+		8F14EFE82BFEF48300F14DC8 /* CurrentPrayerLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFE72BFEF48300F14DC8 /* CurrentPrayerLocationManager.swift */; };
+		8F14EFEB2BFEF4B200F14DC8 /* OnboardingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFEA2BFEF4B200F14DC8 /* OnboardingButtonView.swift */; };
+		8F14EFEE2BFEF4F100F14DC8 /* RemainingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFED2BFEF4F100F14DC8 /* RemainingTimeView.swift */; };
+		8F14EFF12BFEF50F00F14DC8 /* RemainingTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFF02BFEF50F00F14DC8 /* RemainingTimeManager.swift */; };
+		8F14EFF42BFEF53A00F14DC8 /* prayer_times.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F14EFF32BFEF53A00F14DC8 /* prayer_times.json */; };
+		8F14EFF72BFEF56500F14DC8 /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFF62BFEF56500F14DC8 /* ClockInView.swift */; };
+		8F14EFFA2BFEF58200F14DC8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFF92BFEF58200F14DC8 /* OnboardingView.swift */; };
+		8F14EFFE2BFEF5AC00F14DC8 /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */; };
+		8F14F0012BFEF61100F14DC8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14F0002BFEF61100F14DC8 /* LocationManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F14EFAF2BFEF25600F14DC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F14EF952BFEF25500F14DC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F14EFAC2BFEF25600F14DC8;
+			remoteInfo = "PrayPal Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F14EFC02BFEF25700F14DC8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8F14EFAE2BFEF25600F14DC8 /* PrayPal Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8F14EF9D2BFEF25500F14DC8 /* PrayPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrayPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14EFA02BFEF25500F14DC8 /* PrayPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayPalApp.swift; sourceTree = "<group>"; };
+		8F14EFA22BFEF25500F14DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8F14EFA42BFEF25600F14DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F14EFA72BFEF25600F14DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F14EFAD2BFEF25600F14DC8 /* PrayPal Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PrayPal Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14EFB22BFEF25600F14DC8 /* PrayPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayPalApp.swift; sourceTree = "<group>"; };
+		8F14EFB42BFEF25600F14DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8F14EFB62BFEF25700F14DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F14EFB92BFEF25700F14DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F14EFC82BFEF2BB00F14DC8 /* HexColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorManager.swift; sourceTree = "<group>"; };
+		8F14EFCC2BFEF2FC00F14DC8 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		8F14EFCE2BFEF32E00F14DC8 /* FooterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterDataManager.swift; sourceTree = "<group>"; };
+		8F14EFD12BFEF37700F14DC8 /* ClockInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInButtonView.swift; sourceTree = "<group>"; };
+		8F14EFD42BFEF3A000F14DC8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8F14EFD72BFEF3C500F14DC8 /* NextPrayerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerTimeView.swift; sourceTree = "<group>"; };
+		8F14EFDA2BFEF3E400F14DC8 /* NextPrayerTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerTimeModel.swift; sourceTree = "<group>"; };
+		8F14EFDC2BFEF3FD00F14DC8 /* NextPrayerTimeLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerTimeLocationManager.swift; sourceTree = "<group>"; };
+		8F14EFE22BFEF44200F14DC8 /* OnboardingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextView.swift; sourceTree = "<group>"; };
+		8F14EFE52BFEF46300F14DC8 /* GetCurrentPrayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentPrayerInfo.swift; sourceTree = "<group>"; };
+		8F14EFE72BFEF48300F14DC8 /* CurrentPrayerLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPrayerLocationManager.swift; sourceTree = "<group>"; };
+		8F14EFEA2BFEF4B200F14DC8 /* OnboardingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonView.swift; sourceTree = "<group>"; };
+		8F14EFED2BFEF4F100F14DC8 /* RemainingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingTimeView.swift; sourceTree = "<group>"; };
+		8F14EFF02BFEF50F00F14DC8 /* RemainingTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingTimeManager.swift; sourceTree = "<group>"; };
+		8F14EFF32BFEF53A00F14DC8 /* prayer_times.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prayer_times.json; sourceTree = "<group>"; };
+		8F14EFF62BFEF56500F14DC8 /* ClockInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
+		8F14EFF92BFEF58200F14DC8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
+		8F14F0002BFEF61100F14DC8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F14EF9A2BFEF25500F14DC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14EFAA2BFEF25600F14DC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F14EF942BFEF25500F14DC8 = {
+			isa = PBXGroup;
+			children = (
+				8F14EF9F2BFEF25500F14DC8 /* PrayPal */,
+				8F14EFB12BFEF25600F14DC8 /* PrayPal Watch App */,
+				8F14EF9E2BFEF25500F14DC8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8F14EF9E2BFEF25500F14DC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EF9D2BFEF25500F14DC8 /* PrayPal.app */,
+				8F14EFAD2BFEF25600F14DC8 /* PrayPal Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F14EF9F2BFEF25500F14DC8 /* PrayPal */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFA02BFEF25500F14DC8 /* PrayPalApp.swift */,
+				8F14EFA22BFEF25500F14DC8 /* ContentView.swift */,
+				8F14EFA42BFEF25600F14DC8 /* Assets.xcassets */,
+				8F14EFA62BFEF25600F14DC8 /* Preview Content */,
+			);
+			path = PrayPal;
+			sourceTree = "<group>";
+		};
+		8F14EFA62BFEF25600F14DC8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFA72BFEF25600F14DC8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8F14EFB12BFEF25600F14DC8 /* PrayPal Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFF22BFEF52800F14DC8 /* Data */,
+				8F14EFC62BFEF29000F14DC8 /* GeneralManager */,
+				8F14EFC52BFEF27500F14DC8 /* Components */,
+				8F14EFC42BFEF26E00F14DC8 /* Views */,
+				8F14EFB22BFEF25600F14DC8 /* PrayPalApp.swift */,
+				8F14EFB42BFEF25600F14DC8 /* ContentView.swift */,
+				8F14EFB62BFEF25700F14DC8 /* Assets.xcassets */,
+				8F14EFB82BFEF25700F14DC8 /* Preview Content */,
+			);
+			path = "PrayPal Watch App";
+			sourceTree = "<group>";
+		};
+		8F14EFB82BFEF25700F14DC8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFB92BFEF25700F14DC8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8F14EFC42BFEF26E00F14DC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFFC2BFEF59E00F14DC8 /* NextPrayer */,
+				8F14EFF82BFEF57500F14DC8 /* Onboarding */,
+				8F14EFF52BFEF55800F14DC8 /* ClockIn */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F14EFC52BFEF27500F14DC8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFEC2BFEF4DC00F14DC8 /* RemainingTime */,
+				8F14EFE92BFEF4A100F14DC8 /* OnboardingButton */,
+				8F14EFE12BFEF43200F14DC8 /* OnboardingText */,
+				8F14EFD62BFEF3B500F14DC8 /* NextPrayerTime */,
+				8F14EFD32BFEF39100F14DC8 /* Header */,
+				8F14EFD02BFEF36100F14DC8 /* ClockInButton */,
+				8F14EFCA2BFEF2E700F14DC8 /* Footer */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8F14EFC62BFEF29000F14DC8 /* GeneralManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFC72BFEF2A000F14DC8 /* HexColorManager */,
+			);
+			path = GeneralManager;
+			sourceTree = "<group>";
+		};
+		8F14EFC72BFEF2A000F14DC8 /* HexColorManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFC82BFEF2BB00F14DC8 /* HexColorManager.swift */,
+			);
+			path = HexColorManager;
+			sourceTree = "<group>";
+		};
+		8F14EFCA2BFEF2E700F14DC8 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFCB2BFEF2EC00F14DC8 /* Manager */,
+				8F14EFCC2BFEF2FC00F14DC8 /* FooterView.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		8F14EFCB2BFEF2EC00F14DC8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFCE2BFEF32E00F14DC8 /* FooterDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8F14EFD02BFEF36100F14DC8 /* ClockInButton */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFD12BFEF37700F14DC8 /* ClockInButtonView.swift */,
+			);
+			path = ClockInButton;
+			sourceTree = "<group>";
+		};
+		8F14EFD32BFEF39100F14DC8 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFFF2BFEF60500F14DC8 /* Manager */,
+				8F14EFD42BFEF3A000F14DC8 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		8F14EFD62BFEF3B500F14DC8 /* NextPrayerTime */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFD92BFEF3D600F14DC8 /* Manager */,
+				8F14EFD72BFEF3C500F14DC8 /* NextPrayerTimeView.swift */,
+			);
+			path = NextPrayerTime;
+			sourceTree = "<group>";
+		};
+		8F14EFD92BFEF3D600F14DC8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFDA2BFEF3E400F14DC8 /* NextPrayerTimeModel.swift */,
+				8F14EFDC2BFEF3FD00F14DC8 /* NextPrayerTimeLocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8F14EFE12BFEF43200F14DC8 /* OnboardingText */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFE42BFEF45000F14DC8 /* Manager */,
+				8F14EFE22BFEF44200F14DC8 /* OnboardingTextView.swift */,
+			);
+			path = OnboardingText;
+			sourceTree = "<group>";
+		};
+		8F14EFE42BFEF45000F14DC8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFE52BFEF46300F14DC8 /* GetCurrentPrayerInfo.swift */,
+				8F14EFE72BFEF48300F14DC8 /* CurrentPrayerLocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8F14EFE92BFEF4A100F14DC8 /* OnboardingButton */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFEA2BFEF4B200F14DC8 /* OnboardingButtonView.swift */,
+			);
+			path = OnboardingButton;
+			sourceTree = "<group>";
+		};
+		8F14EFEC2BFEF4DC00F14DC8 /* RemainingTime */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFEF2BFEF4FF00F14DC8 /* Manager */,
+				8F14EFED2BFEF4F100F14DC8 /* RemainingTimeView.swift */,
+			);
+			path = RemainingTime;
+			sourceTree = "<group>";
+		};
+		8F14EFEF2BFEF4FF00F14DC8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFF02BFEF50F00F14DC8 /* RemainingTimeManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8F14EFF22BFEF52800F14DC8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFF32BFEF53A00F14DC8 /* prayer_times.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8F14EFF52BFEF55800F14DC8 /* ClockIn */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFF62BFEF56500F14DC8 /* ClockInView.swift */,
+			);
+			path = ClockIn;
+			sourceTree = "<group>";
+		};
+		8F14EFF82BFEF57500F14DC8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFF92BFEF58200F14DC8 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8F14EFFC2BFEF59E00F14DC8 /* NextPrayer */ = {
+			isa = PBXGroup;
+			children = (
+				8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */,
+			);
+			path = NextPrayer;
+			sourceTree = "<group>";
+		};
+		8F14EFFF2BFEF60500F14DC8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8F14F0002BFEF61100F14DC8 /* LocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F14EF9C2BFEF25500F14DC8 /* PrayPal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F14EFC12BFEF25700F14DC8 /* Build configuration list for PBXNativeTarget "PrayPal" */;
+			buildPhases = (
+				8F14EF992BFEF25500F14DC8 /* Sources */,
+				8F14EF9A2BFEF25500F14DC8 /* Frameworks */,
+				8F14EF9B2BFEF25500F14DC8 /* Resources */,
+				8F14EFC02BFEF25700F14DC8 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F14EFB02BFEF25600F14DC8 /* PBXTargetDependency */,
+			);
+			name = PrayPal;
+			productName = PrayPal;
+			productReference = 8F14EF9D2BFEF25500F14DC8 /* PrayPal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F14EFAC2BFEF25600F14DC8 /* PrayPal Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F14EFBD2BFEF25700F14DC8 /* Build configuration list for PBXNativeTarget "PrayPal Watch App" */;
+			buildPhases = (
+				8F14EFA92BFEF25600F14DC8 /* Sources */,
+				8F14EFAA2BFEF25600F14DC8 /* Frameworks */,
+				8F14EFAB2BFEF25600F14DC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PrayPal Watch App";
+			productName = "PrayPal Watch App";
+			productReference = 8F14EFAD2BFEF25600F14DC8 /* PrayPal Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F14EF952BFEF25500F14DC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					8F14EF9C2BFEF25500F14DC8 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					8F14EFAC2BFEF25600F14DC8 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 8F14EF982BFEF25500F14DC8 /* Build configuration list for PBXProject "PrayPal" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F14EF942BFEF25500F14DC8;
+			productRefGroup = 8F14EF9E2BFEF25500F14DC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F14EF9C2BFEF25500F14DC8 /* PrayPal */,
+				8F14EFAC2BFEF25600F14DC8 /* PrayPal Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F14EF9B2BFEF25500F14DC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14EFA82BFEF25600F14DC8 /* Preview Assets.xcassets in Resources */,
+				8F14EFA52BFEF25600F14DC8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14EFAB2BFEF25600F14DC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14EFF42BFEF53A00F14DC8 /* prayer_times.json in Resources */,
+				8F14EFBA2BFEF25700F14DC8 /* Preview Assets.xcassets in Resources */,
+				8F14EFB72BFEF25700F14DC8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F14EF992BFEF25500F14DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14EFA32BFEF25500F14DC8 /* ContentView.swift in Sources */,
+				8F14EFA12BFEF25500F14DC8 /* PrayPalApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14EFA92BFEF25600F14DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14EFDB2BFEF3E400F14DC8 /* NextPrayerTimeModel.swift in Sources */,
+				8F14EFE82BFEF48300F14DC8 /* CurrentPrayerLocationManager.swift in Sources */,
+				8F14EFC92BFEF2BB00F14DC8 /* HexColorManager.swift in Sources */,
+				8F14EFE32BFEF44200F14DC8 /* OnboardingTextView.swift in Sources */,
+				8F14EFFE2BFEF5AC00F14DC8 /* NextPrayerView.swift in Sources */,
+				8F14EFE62BFEF46300F14DC8 /* GetCurrentPrayerInfo.swift in Sources */,
+				8F14EFCD2BFEF2FC00F14DC8 /* FooterView.swift in Sources */,
+				8F14EFEE2BFEF4F100F14DC8 /* RemainingTimeView.swift in Sources */,
+				8F14EFD22BFEF37700F14DC8 /* ClockInButtonView.swift in Sources */,
+				8F14EFF12BFEF50F00F14DC8 /* RemainingTimeManager.swift in Sources */,
+				8F14EFB52BFEF25600F14DC8 /* ContentView.swift in Sources */,
+				8F14EFB32BFEF25600F14DC8 /* PrayPalApp.swift in Sources */,
+				8F14EFFA2BFEF58200F14DC8 /* OnboardingView.swift in Sources */,
+				8F14EFCF2BFEF32E00F14DC8 /* FooterDataManager.swift in Sources */,
+				8F14EFDD2BFEF3FD00F14DC8 /* NextPrayerTimeLocationManager.swift in Sources */,
+				8F14EFEB2BFEF4B200F14DC8 /* OnboardingButtonView.swift in Sources */,
+				8F14EFD52BFEF3A000F14DC8 /* HeaderView.swift in Sources */,
+				8F14F0012BFEF61100F14DC8 /* LocationManager.swift in Sources */,
+				8F14EFD82BFEF3C500F14DC8 /* NextPrayerTimeView.swift in Sources */,
+				8F14EFF72BFEF56500F14DC8 /* ClockInView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F14EFB02BFEF25600F14DC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F14EFAC2BFEF25600F14DC8 /* PrayPal Watch App */;
+			targetProxy = 8F14EFAF2BFEF25600F14DC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8F14EFBB2BFEF25700F14DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F14EFBC2BFEF25700F14DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		8F14EFBE2BFEF25700F14DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PrayPal Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = A23N5QDWR3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PrayPal;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Privacy - Location When In Use Usage Description";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ranggabiner.com.PrayPal;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ranggabiner.com.PrayPal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		8F14EFBF2BFEF25700F14DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PrayPal Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = A23N5QDWR3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PrayPal;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Privacy - Location When In Use Usage Description";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ranggabiner.com.PrayPal;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ranggabiner.com.PrayPal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		8F14EFC22BFEF25700F14DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PrayPal/Preview Content\"";
+				DEVELOPMENT_TEAM = A23N5QDWR3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PrayPal;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Privacy - Location When In Use Usage Description";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ranggabiner.com.PrayPal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F14EFC32BFEF25700F14DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PrayPal/Preview Content\"";
+				DEVELOPMENT_TEAM = A23N5QDWR3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PrayPal;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Privacy - Location When In Use Usage Description";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ranggabiner.com.PrayPal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F14EF982BFEF25500F14DC8 /* Build configuration list for PBXProject "PrayPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14EFBB2BFEF25700F14DC8 /* Debug */,
+				8F14EFBC2BFEF25700F14DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F14EFBD2BFEF25700F14DC8 /* Build configuration list for PBXNativeTarget "PrayPal Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14EFBE2BFEF25700F14DC8 /* Debug */,
+				8F14EFBF2BFEF25700F14DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F14EFC12BFEF25700F14DC8 /* Build configuration list for PBXNativeTarget "PrayPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14EFC22BFEF25700F14DC8 /* Debug */,
+				8F14EFC32BFEF25700F14DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F14EF952BFEF25500F14DC8 /* Project object */;
+}
