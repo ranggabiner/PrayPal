@@ -45,13 +45,21 @@ struct NextPrayerTimeNotifView: View {
 
         if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
             let nextPrayerInfo = getNextPrayerInfo(currentTime: Date(), prayerTimes: prayerTimes)
-            prayerTimeNotif = nextPrayerInfo.time
+            
+            if nextPrayerInfo.name == "Sunrise" {
+                // If the next prayer is Sunrise, set the time to Dhuhr's time
+                prayerTimeNotif = prayerTimes.dhuhr
+            } else {
+                prayerTimeNotif = nextPrayerInfo.time
+            }
+            
             nextPrayerName = nextPrayerInfo.name
         } else {
             prayerTimeNotif = "Error loading prayer times"
             nextPrayerName = "Error"
         }
     }
+
 
     private func getNextPrayerInfo(currentTime: Date, prayerTimes: PrayerTimes) -> (name: String, time: String) {
         let calendar = Calendar.current
@@ -91,6 +99,7 @@ struct NextPrayerTimeNotifView: View {
 
         return (name: "Error", time: "Error")
     }
+
 }
 
 #Preview {

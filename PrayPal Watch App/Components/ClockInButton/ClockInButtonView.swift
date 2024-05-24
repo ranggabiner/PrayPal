@@ -56,7 +56,7 @@ struct ClockInButtonView: View {
     func scheduleNotificationForNextPrayer() {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        
+
         guard let notificationTime = formatter.date(from: prayerTimeNotif) else {
             print("Failed to parse time string.")
             return
@@ -76,7 +76,7 @@ struct ClockInButtonView: View {
             return
         }
 
-        // Schedule notifications three times with 5 minutes interval
+        // Schedule notifications multiple times with 5 minutes interval
         let intervals = [0, 1, 3, 4, 6] // in minutes
         for interval in intervals {
             guard let notificationDate = calendar.date(byAdding: .minute, value: interval, to: scheduledTime) else {
@@ -86,6 +86,7 @@ struct ClockInButtonView: View {
             scheduleNotification(at: notificationDate, withTitle: "Peringatan Sholat", subtitle: "Anda belum Sholat")
         }
     }
+
 
     func scheduleNotification(at date: Date, withTitle title: String, subtitle: String) {
         let content = UNMutableNotificationContent()
@@ -105,8 +106,6 @@ struct ClockInButtonView: View {
             }
         }
     }
-
-    
 }
 
 #Preview {
