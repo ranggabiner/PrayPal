@@ -101,7 +101,8 @@ struct OnboardingButtonView: View {
         }
 
         // Schedule notifications three times with 5 minutes interval
-        let intervals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] // in minutes
+//        let intervals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] // in minutes
+        let intervals = Array(0...100) // in minutes
         for interval in intervals {
             guard let notificationDate = calendar.date(byAdding: .minute, value: interval, to: scheduledTime) else {
                 print("Failed to calculate notification time for interval \(interval) minutes.")
@@ -167,11 +168,11 @@ struct OnboardingButtonView: View {
     
     func getRandomTitleAndSubtitle() -> (String, String) {
         let titlesAndSubtitles = [
-            ("Peringatan Sholat \(currentPrayerName)", "Anda belum Sholat \(currentPrayerName)"),
-            ("Waktu Sholat \(currentPrayerName)", "Saatnya sholat \(currentPrayerName)"),
-            ("Ayo Sholat \(currentPrayerName)", "Waktunya sholat \(currentPrayerName) sudah tiba"),
-            ("Ingat Sholat \(currentPrayerName)", "Jangan lupa sholat \(currentPrayerName)"),
-            ("Sholat \(currentPrayerName) Sekarang", "Waktu sholat \(currentPrayerName) telah tiba")
+            ("Peringatan Sholat", "Anda belum Sholat"),
+            ("Waktu Sholat", "Saatnya sholat"),
+            ("Ayo Sholat", "Waktunya sholat  sudah tiba"),
+            ("Ingat Sholat", "Jangan lupa sholat"),
+            ("Sholat  Sekarang", "Waktu sholat  telah tiba")
         ]
         return titlesAndSubtitles.randomElement() ?? ("Peringatan Sholat", "Saatnya Sholat")
     }
