@@ -80,7 +80,7 @@ func getCurrentPrayerName(currentTime: Date, prayerTimes: PrayerTimes) -> String
     if currentTime >= fajrTime && currentTime < sunriseTime {
         return "Fajr"
     } else if currentTime >= sunriseTime && currentTime < dhuhrTime {
-        return "Sunrise"
+        return "Fajr"
     } else if currentTime >= dhuhrTime && currentTime < asrTime {
         return "Dhuhr"
     } else if currentTime >= asrTime && currentTime < maghribTime {

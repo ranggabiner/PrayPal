@@ -70,6 +70,16 @@ struct RemainingTimeView: View {
 
         let now = Date()
         if now < nextPrayerTime {
+            // Check if the current time is between sunrise and Dhuhr
+            if let sunriseTime = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city)?.sunrise,
+               let dhuhrTime = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city)?.dhuhr,
+               let sunriseDateTime = combineDateAndTime(date: Date(), time: sunriseTime),
+               let dhuhrDateTime = combineDateAndTime(date: Date(), time: dhuhrTime),
+               now >= sunriseDateTime && now < dhuhrDateTime {
+                   countdownString = "00:00:00"
+                   return
+            }
+
             let calendar = Calendar.current
             let components = calendar.dateComponents([.hour, .minute, .second], from: now, to: nextPrayerTime)
             countdownString = String(format: "%02d:%02d:%02d", components.hour ?? 0, components.minute ?? 0, components.second ?? 0)
@@ -77,6 +87,17 @@ struct RemainingTimeView: View {
             countdownString = "Prayer time passed"
         }
     }
+
+
+
+    private func combineDateAndTime(date: Date, time: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        guard let timeDate = dateFormatter.date(from: time) else { return nil }
+        let calendar = Calendar.current
+        return calendar.date(bySettingHour: calendar.component(.hour, from: timeDate), minute: calendar.component(.minute, from: timeDate), second: 0, of: date)
+    }
+
 }
 
 
