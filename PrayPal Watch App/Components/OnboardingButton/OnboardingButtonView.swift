@@ -11,6 +11,9 @@ import UserNotifications
 struct OnboardingButtonView: View {
     @State private var prayerTimeNotif: String = "Loading..."
     @AppStorage("currentPage") var currentPage: String = "OnBoardingView"
+    @StateObject private var locationManager = CurrentPrayerTimeLocationManager()
+    @State private var currentPrayerName: String = "Loading..."
+    @State private var nextPrayerTime: Date?
     
     var body: some View {
         ZStack {
@@ -43,7 +46,12 @@ struct OnboardingButtonView: View {
 //                .background(Color(hex: 0xA2FC06))
                 .cornerRadius(.infinity)
             }
-            .padding()
+        }
+        .onReceive(locationManager.$province) { _ in
+            updateCurrentPrayerName()
+        }
+        .onReceive(locationManager.$city) { _ in
+            updateCurrentPrayerName()
         }
     }
     
@@ -93,13 +101,14 @@ struct OnboardingButtonView: View {
         }
 
         // Schedule notifications three times with 5 minutes interval
-        let intervals = [0, 1, 3, 4, 6] // in minutes
+        let intervals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] // in minutes
         for interval in intervals {
             guard let notificationDate = calendar.date(byAdding: .minute, value: interval, to: scheduledTime) else {
                 print("Failed to calculate notification time for interval \(interval) minutes.")
                 continue
             }
-            scheduleNotificationCalendar(at: notificationDate, withTitle: "Peringatan Sholat", subtitle: "Anda belum Sholat")
+            let (title, subtitle) = getRandomTitleAndSubtitle()
+            scheduleNotificationCalendar(at: notificationDate, withTitle: title, subtitle: subtitle)
         }
     }
 
@@ -123,9 +132,11 @@ struct OnboardingButtonView: View {
     }
     
     func scheduleNotificationInterval() {
+        let (title, subtitle) = getRandomTitleAndSubtitle()
+
         let content = UNMutableNotificationContent()
-        content.title = "Peringatan Sholat"
-        content.subtitle = "Anda belum Sholat"
+        content.title = title
+        content.subtitle = subtitle
         content.sound = UNNotificationSound.default
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
@@ -138,6 +149,31 @@ struct OnboardingButtonView: View {
                 print("Notification scheduled!")
             }
         }
+    }
+    
+    private func updateCurrentPrayerName() {
+        guard let location = locationManager.location else {
+            print("Location not available")
+            return
+        }
+
+        if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
+            currentPrayerName = getCurrentPrayerName(currentTime: Date(), prayerTimes: prayerTimes)
+            nextPrayerTime = getNextPrayerTimeRemaining(currentTime: Date(), prayerTimes: prayerTimes)
+        } else {
+            currentPrayerName = "Error loading prayer times"
+        }
+    }
+    
+    func getRandomTitleAndSubtitle() -> (String, String) {
+        let titlesAndSubtitles = [
+            ("Peringatan Sholat \(currentPrayerName)", "Anda belum Sholat \(currentPrayerName)"),
+            ("Waktu Sholat \(currentPrayerName)", "Saatnya sholat \(currentPrayerName)"),
+            ("Ayo Sholat \(currentPrayerName)", "Waktunya sholat \(currentPrayerName) sudah tiba"),
+            ("Ingat Sholat \(currentPrayerName)", "Jangan lupa sholat \(currentPrayerName)"),
+            ("Sholat \(currentPrayerName) Sekarang", "Waktu sholat \(currentPrayerName) telah tiba")
+        ]
+        return titlesAndSubtitles.randomElement() ?? ("Peringatan Sholat", "Saatnya Sholat")
     }
 }
 

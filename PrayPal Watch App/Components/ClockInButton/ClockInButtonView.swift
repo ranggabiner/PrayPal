@@ -13,7 +13,10 @@ struct ClockInButtonView: View {
     @State private var prayerTimeNotif: String = "Loading..."
     @AppStorage("currentPage") var currentPage: String = "ClockInView"
     @State private var showAlert = false
-    
+    @StateObject private var locationManager = CurrentPrayerTimeLocationManager()
+    @State private var currentPrayerName: String = "Loading..."
+    @State private var nextPrayerTime: Date?
+
     var body: some View {
         ZStack {
             NextPrayerTimeNotifView(prayerTimeNotif: $prayerTimeNotif) //harus ada ini
@@ -51,6 +54,12 @@ struct ClockInButtonView: View {
                 }
             }
         }
+        .onReceive(locationManager.$province) { _ in
+            updateCurrentPrayerName()
+        }
+        .onReceive(locationManager.$city) { _ in
+            updateCurrentPrayerName()
+        }
     }
     
     func scheduleNotificationForNextPrayer() {
@@ -77,16 +86,27 @@ struct ClockInButtonView: View {
         }
 
         // Schedule notifications multiple times with 5 minutes interval
-        let intervals = [0, 1, 3, 4, 6] // in minutes
+        let intervals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] // in minutes
         for interval in intervals {
             guard let notificationDate = calendar.date(byAdding: .minute, value: interval, to: scheduledTime) else {
                 print("Failed to calculate notification time for interval \(interval) minutes.")
                 continue
             }
-            scheduleNotification(at: notificationDate, withTitle: "Peringatan Sholat", subtitle: "Anda belum Sholat")
+            let (title, subtitle) = getRandomTitleAndSubtitle()
+            scheduleNotification(at: notificationDate, withTitle: title, subtitle: subtitle)
         }
     }
 
+    func getRandomTitleAndSubtitle() -> (String, String) {
+        let titlesAndSubtitles = [
+            ("Peringatan Sholat \(currentPrayerName)", "Anda belum Sholat \(currentPrayerName)"),
+            ("Waktu Sholat \(currentPrayerName)", "Saatnya sholat \(currentPrayerName)"),
+            ("Ayo Sholat \(currentPrayerName)", "Waktunya sholat \(currentPrayerName) sudah tiba"),
+            ("Ingat Sholat \(currentPrayerName)", "Jangan lupa sholat \(currentPrayerName)"),
+            ("Sholat \(currentPrayerName) Sekarang", "Waktu sholat \(currentPrayerName) telah tiba")
+        ]
+        return titlesAndSubtitles.randomElement() ?? ("Peringatan Sholat", "Saatnya Sholat")
+    }
 
     func scheduleNotification(at date: Date, withTitle title: String, subtitle: String) {
         let content = UNMutableNotificationContent()
@@ -104,6 +124,20 @@ struct ClockInButtonView: View {
             } else {
                 print("Notification scheduled for \(date)!")
             }
+        }
+    }
+    
+    private func updateCurrentPrayerName() {
+        guard let location = locationManager.location else {
+            print("Location not available")
+            return
+        }
+
+        if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
+            currentPrayerName = getCurrentPrayerName(currentTime: Date(), prayerTimes: prayerTimes)
+            nextPrayerTime = getNextPrayerTimeRemaining(currentTime: Date(), prayerTimes: prayerTimes)
+        } else {
+            currentPrayerName = "Error loading prayer times"
         }
     }
 }
