@@ -11,6 +11,7 @@ struct NextPrayerTimeView: View {
     @AppStorage("currentPage") var currentPage: String = "NextPrayerView"
     @StateObject private var locationManager = NextPrayerTimeLocationManager()
     @Binding var prayerTime: String
+    @Binding var sunrisePrayerTime: String
     @State private var nextPrayerName: String = "Loading..."
     @State private var timer: Timer? = nil
 
@@ -55,6 +56,7 @@ struct NextPrayerTimeView: View {
             let nextPrayerInfo = getNextPrayerInfo(currentTime: Date(), prayerTimes: prayerTimes)
             prayerTime = nextPrayerInfo.time
             nextPrayerName = nextPrayerInfo.name
+            sunrisePrayerTime = prayerTimes.sunrise // Store the sunrise time separately
         } else {
             prayerTime = "Error loading prayer times"
             nextPrayerName = "Error"
@@ -104,9 +106,8 @@ struct NextPrayerTimeView: View {
 
         return (name: "Error", time: "Error")
     }
-
 }
 
 #Preview {
-    NextPrayerTimeView(prayerTime: .constant("Loading..."))
+    NextPrayerTimeView(prayerTime: .constant("Loading..."), sunrisePrayerTime: .constant("Loading..."))
 }

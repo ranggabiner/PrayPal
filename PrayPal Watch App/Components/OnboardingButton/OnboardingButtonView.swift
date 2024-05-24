@@ -18,7 +18,7 @@ struct OnboardingButtonView: View {
                 .hidden()
             VStack {
                 Button(action: {
-                    scheduleNotificationForNextPrayer()
+                    requestNotificationPermissionAndScheduleCalendar()
                     currentPage = "NextPrayerView"
                 }) {
                     Text("Yes")
@@ -31,7 +31,7 @@ struct OnboardingButtonView: View {
                 .cornerRadius(.infinity)
                 
                 Button(action: {
-                    requestNotificationPermissionAndSchedule()
+                    requestNotificationPermissionAndScheduleInterval()
                     currentPage = "ClockInView"
                 }) {
                     Text("No")
@@ -44,6 +44,28 @@ struct OnboardingButtonView: View {
                 .cornerRadius(.infinity)
             }
             .padding()
+        }
+    }
+    
+    func requestNotificationPermissionAndScheduleInterval() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("All set!")
+                scheduleNotificationInterval()
+            } else if let error = error {
+                print("Permission error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func requestNotificationPermissionAndScheduleCalendar() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("All set!")
+                scheduleNotificationForNextPrayer()
+            } else if let error = error {
+                print("Permission error: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -96,17 +118,6 @@ struct OnboardingButtonView: View {
                 print("Error adding notification: \(error.localizedDescription)")
             } else {
                 print("Notification scheduled for \(date)!")
-            }
-        }
-    }
-    
-    func requestNotificationPermissionAndSchedule() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("All set!")
-                scheduleNotificationInterval()
-            } else if let error = error {
-                print("Permission error: \(error.localizedDescription)")
             }
         }
     }

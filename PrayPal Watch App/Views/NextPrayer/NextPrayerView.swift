@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NextPrayerView: View {
     @State private var prayerTime: String = "Loading..."
+    @State private var sunrisePrayerTime: String = "Loading..."
     @AppStorage("currentPage") var currentPage: String = "NextPrayerView"
     
     // Timer to check the current time every second
@@ -21,7 +22,7 @@ struct NextPrayerView: View {
                 Spacer()
             }
             Spacer()
-            NextPrayerTimeView(prayerTime: $prayerTime)
+            NextPrayerTimeView(prayerTime: $prayerTime, sunrisePrayerTime: $sunrisePrayerTime)
             Spacer()
             FooterView()
         }
@@ -42,7 +43,7 @@ struct NextPrayerView: View {
         
         let currentTime = formatter.string(from: Date())
         
-        if currentTime == prayerTime {
+        if currentTime == prayerTime && currentTime != sunrisePrayerTime {
             currentPage = "ClockInView"
         }
     }
