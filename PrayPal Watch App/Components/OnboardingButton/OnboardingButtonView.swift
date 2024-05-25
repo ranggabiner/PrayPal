@@ -9,30 +9,33 @@ import SwiftUI
 import UserNotifications
 
 struct OnboardingButtonView: View {
+    @State private var prayerTime: String = "Loading..."
+    @State private var fajrPrayerTime: String = "Loading..."
+    @State private var sunrisePrayerTime: String = "Loading..."
+    @State private var dhuhrPrayerTime: String = "Loading..."
+    @State private var asrPrayerTime: String = "Loading..."
+    @State private var maghribPrayerTime: String = "Loading..."
+    @State private var ishaPrayerTime: String = "Loading..."
+    @State private var currentPrayerTime: String = "Loading..."
+
+    
     @State private var prayerTimeNotif: String = "Loading..."
     @AppStorage("currentPage") var currentPage: String = "OnBoardingView"
     @StateObject private var locationManager = CurrentPrayerTimeLocationManager()
     @State private var currentPrayerName: String = "Loading..."
     @State private var nextPrayerTime: Date?
+    @State private var selectedInterval: Int = 1
+    
+    @AppStorage("currentName") var currentName: String = "Loading..."
     
     var body: some View {
         ZStack {
-            NextPrayerTimeNotifView(prayerTimeNotif: $prayerTimeNotif) //harus ada ini
+            NextPrayerTimeViewHiden(prayerTime: $prayerTime, fajrPrayerTime: $fajrPrayerTime, sunrisePrayerTime: $sunrisePrayerTime, dhuhrPrayerTime: $dhuhrPrayerTime, asrPrayerTime: $asrPrayerTime, maghribPrayerTime: $maghribPrayerTime, ishaPrayerTime: $ishaPrayerTime, currentPrayerTime: $currentPrayerTime)
+                .hidden()
+
+            NextPrayerTimeNotifView(prayerTimeNotif: $prayerTimeNotif, currentPrayerName: $currentPrayerName) //harus ada ini
                 .hidden()
             VStack {
-                Button(action: {
-                    requestNotificationPermissionAndScheduleCalendar()
-                    currentPage = "NextPrayerView"
-                }) {
-                    Text("Yes")
-                        .font(.system(size: 16))
-                        .foregroundColor(.white)
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity)
-//                .background(Color(hex: 0xA2FC06))
-                .cornerRadius(.infinity)
-                
                 Button(action: {
                     requestNotificationPermissionAndScheduleInterval()
                     currentPage = "ClockInView"
@@ -43,15 +46,47 @@ struct OnboardingButtonView: View {
                         .fontWeight(.medium)
                 }
                 .frame(maxWidth: .infinity)
-//                .background(Color(hex: 0xA2FC06))
+                .cornerRadius(.infinity)
+                
+                Button(action: {
+                    requestNotificationPermissionAndScheduleCalendar()
+                    getCurrentName()
+                    currentPage = "NextPrayerView"
+                }) {
+                    Text("Yes")
+                        .font(.system(size: 16))
+                        .foregroundColor(.white)
+                        .fontWeight(.medium)
+                }
+                .frame(maxWidth: .infinity)
                 .cornerRadius(.infinity)
             }
         }
-        .onReceive(locationManager.$province) { _ in
-            updateCurrentPrayerName()
+    }
+    
+    func getCurrentName() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+
+        guard let currentTime = formatter.date(from: formatter.string(from: Date())),
+              let fajrTime = formatter.date(from: fajrPrayerTime),
+              let dhuhrTime = formatter.date(from: dhuhrPrayerTime),
+              let asrTime = formatter.date(from: asrPrayerTime),
+              let maghribTime = formatter.date(from: maghribPrayerTime),
+              let ishaTime = formatter.date(from: ishaPrayerTime) else {
+            return
         }
-        .onReceive(locationManager.$city) { _ in
-            updateCurrentPrayerName()
+
+        if currentTime >= fajrTime && currentTime < dhuhrTime {
+            currentName = "Dhuhr"
+        } else if currentTime >= dhuhrTime && currentTime < asrTime {
+            currentName = "Asr"
+        } else if currentTime >= asrTime && currentTime < maghribTime {
+            currentName = "Maghrib"
+        } else if currentTime >= maghribTime && currentTime < ishaTime {
+            currentName = "Isha"
+        } else if currentTime >= ishaTime || currentTime < fajrTime {
+            currentName = "Fajr"
         }
     }
     
@@ -99,12 +134,17 @@ struct OnboardingButtonView: View {
             print("Scheduled time must be in the future.")
             return
         }
+        
+        // Schedule notifications with selected interval
+        var customIntervals: [Int] = []
+        for i in 1...50 {
+            customIntervals.append(i * selectedInterval) // Interval waktu ditambahkan dengan kelipatan dari selectedInterval
+        }
 
-        // Schedule notifications three times with 5 minutes interval
-        let intervals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] // in minutes
-        for interval in intervals {
+        // Melakukan perulangan untuk setiap interval waktu
+        for interval in customIntervals {
             guard let notificationDate = calendar.date(byAdding: .minute, value: interval, to: scheduledTime) else {
-                print("Failed to calculate notification time for interval \(interval) minutes.")
+                print("Gagal menghitung waktu notifikasi untuk interval \(interval) menit.")
                 continue
             }
             let (title, subtitle) = getRandomTitleAndSubtitle()
@@ -139,7 +179,7 @@ struct OnboardingButtonView: View {
         content.subtitle = subtitle
         content.sound = UNNotificationSound.default
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(selectedInterval * 60), repeats: true)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in
@@ -151,19 +191,19 @@ struct OnboardingButtonView: View {
         }
     }
     
-    private func updateCurrentPrayerName() {
-        guard let location = locationManager.location else {
-            print("Location not available")
-            return
-        }
-
-        if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
-            currentPrayerName = getCurrentPrayerName(currentTime: Date(), prayerTimes: prayerTimes)
-            nextPrayerTime = getNextPrayerTimeRemaining(currentTime: Date(), prayerTimes: prayerTimes)
-        } else {
-            currentPrayerName = "Error loading prayer times"
-        }
-    }
+//    private func updateCurrentPrayerName() {
+//        guard let location = locationManager.location else {
+//            print("Location not available")
+//            return
+//        }
+//
+//        if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
+//            currentPrayerName = getCurrentPrayerName(currentTime: Date(), prayerTimes: prayerTimes)
+//            nextPrayerTime = getNextPrayerTimeRemaining(currentTime: Date(), prayerTimes: prayerTimes)
+//        } else {
+//            currentPrayerName = "Error loading prayer times"
+//        }
+//    }
     
     func getRandomTitleAndSubtitle() -> (String, String) {
         let titlesAndSubtitles = [

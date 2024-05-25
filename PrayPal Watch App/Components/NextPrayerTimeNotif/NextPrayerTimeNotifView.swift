@@ -10,8 +10,11 @@ import SwiftUI
 struct NextPrayerTimeNotifView: View {
     @StateObject private var locationManager = NextPrayerTimeLocationManager()
     @Binding var prayerTimeNotif: String
+    @Binding var currentPrayerName: String
     @State private var nextPrayerName: String = "Loading..."
     @State private var timer: Timer? = nil
+    @State private var nextPrayerTime: Date?
+
 
     var body: some View {
         VStack(spacing: 20) {
@@ -25,15 +28,20 @@ struct NextPrayerTimeNotifView: View {
         }
         .onReceive(locationManager.$province) { _ in
             updatePrayerTime()
+            updateCurrentPrayerName()
+
         }
         .onReceive(locationManager.$city) { _ in
             updatePrayerTime()
+            updateCurrentPrayerName()
+
         }
     }
 
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             updatePrayerTime()
+            updateCurrentPrayerName()
         }
     }
 
@@ -99,9 +107,23 @@ struct NextPrayerTimeNotifView: View {
 
         return (name: "Error", time: "Error")
     }
+    
+    private func updateCurrentPrayerName() {
+        guard let location = locationManager.location else {
+            print("Location not available")
+            return
+        }
+
+        if let prayerTimes = loadPrayerTimes(for: Date(), province: locationManager.province, city: locationManager.city) {
+            currentPrayerName = getCurrentPrayerName(currentTime: Date(), prayerTimes: prayerTimes)
+            nextPrayerTime = getNextPrayerTimeRemaining(currentTime: Date(), prayerTimes: prayerTimes)
+        } else {
+            currentPrayerName = "Error loading prayer times"
+        }
+    }
 
 }
 
 #Preview {
-    NextPrayerTimeNotifView(prayerTimeNotif: .constant("Loading..."))
+    NextPrayerTimeNotifView(prayerTimeNotif: .constant("Loading..."), currentPrayerName: .constant("Loading..."))
 }

@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import UserNotifications
+
 
 @main
 struct PrayPal_Watch_AppApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

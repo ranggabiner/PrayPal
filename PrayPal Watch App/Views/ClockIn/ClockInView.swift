@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClockInView: View {
     @State var isPrayed: Bool = false
+    @State var currentName: String = "Loading..."
     
     var body: some View {
         VStack {

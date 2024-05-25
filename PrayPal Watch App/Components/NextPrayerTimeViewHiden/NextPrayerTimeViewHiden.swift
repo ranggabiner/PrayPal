@@ -1,13 +1,13 @@
-////
-////  NextPrayerTimeView.swift
-////  PrayPal Watch App
-////
-////  Created by Rangga Biner on 23/05/24.
-////
 //
+//  NextPrayerTimeViewHiden.swift
+//  PrayPal Watch App
+//
+//  Created by Rangga Biner on 25/05/24.
+//
+
 import SwiftUI
 
-struct NextPrayerTimeView: View {
+struct NextPrayerTimeViewHiden: View {
     @AppStorage("currentPage") var currentPage: String = "NextPrayerView"
     @StateObject private var locationManager = NextPrayerTimeLocationManager()
     @Binding var prayerTime: String
@@ -25,14 +25,7 @@ struct NextPrayerTimeView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(nextPrayerName)
-                .fontWeight(.medium)
-                .font(.system(size: 24))
-                .foregroundStyle(Color(.white))
-            Text(prayerTime)
-                .fontWeight(.semibold)
-                .font(.system(size: 34))
-                .foregroundStyle(Color(.green))
+            Text("i")
         }
         .onAppear {
             startTimer()
@@ -174,5 +167,5 @@ struct NextPrayerTimeView: View {
 }
 
 #Preview {
-    NextPrayerTimeView(prayerTime: .constant("Loading..."), fajrPrayerTime: .constant("Loading..."), sunrisePrayerTime: .constant("Loading..."), dhuhrPrayerTime: .constant("Loading..."), asrPrayerTime: .constant("Loading..."), maghribPrayerTime: .constant("Loading..."), ishaPrayerTime: .constant("Loading..."), currentPrayerTime: .constant("Loading..."))
+    NextPrayerTimeViewHiden(prayerTime: .constant("Loading..."), fajrPrayerTime: .constant("Loading..."), sunrisePrayerTime: .constant("Loading..."), dhuhrPrayerTime: .constant("Loading..."), asrPrayerTime: .constant("Loading..."), maghribPrayerTime: .constant("Loading..."), ishaPrayerTime: .constant("Loading..."), currentPrayerTime: .constant("Loading..."))
 }
