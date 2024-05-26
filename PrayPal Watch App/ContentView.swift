@@ -11,18 +11,31 @@ struct ContentView: View {
     @AppStorage("currentPage") var currentPage: String = "OnboardingView"
 
     var body: some View {
-        switch currentPage {
-        case "OnboardingView":
-            OnboardingView()
-        case "NextPrayerView":
-            NextPrayerView()
-        case "ClockInView":
-            ClockInView() 
-        case "IsPrayedView":
-            IsPrayedView()
-        default:
-            OnboardingView()
+        TabView {
+            VStack {
+                switch currentPage {
+                case "OnboardingView":
+                    OnboardingView()
+                case "NextPrayerView":
+                    NextPrayerView()
+                case "ClockInView":
+                    ClockInView()
+                case "IsPrayedView":
+                    IsPrayedView()
+                default:
+                    OnboardingView()
+                }
+            }
+                .tabItem {
+                    Text("Home")
+                }
+            PrayerTimesView()
+                .tabItem {
+                    Text("Settings")
+                }
+
         }
+
     }
 }
 

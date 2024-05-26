@@ -36,6 +36,9 @@
 		8F14EFFE2BFEF5AC00F14DC8 /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */; };
 		8F14F0012BFEF61100F14DC8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14F0002BFEF61100F14DC8 /* LocationManager.swift */; };
 		8F91AC462BFF31F000FBF222 /* NextPrayerTimeNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91AC452BFF31F000FBF222 /* NextPrayerTimeNotifView.swift */; };
+		8F9424292C03436D001828F4 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9424282C03436D001828F4 /* PrayerTimesView.swift */; };
+		8F9424322C0345B6001828F4 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9424312C0345B6001828F4 /* CustomTabView.swift */; };
+		8F9424392C035FBC001828F4 /* PickerPrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9424382C035FBC001828F4 /* PickerPrayerTimesView.swift */; };
 		8FE792792BFF8B1800D60FEE /* IsPrayedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE792782BFF8B1800D60FEE /* IsPrayedTextView.swift */; };
 		8FE7927C2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7927B2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift */; };
 		8FE7927E2BFF8D5800D60FEE /* IsPrayedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE7927D2BFF8D5800D60FEE /* IsPrayedView.swift */; };
@@ -98,6 +101,9 @@
 		8F14EFFD2BFEF5AC00F14DC8 /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
 		8F14F0002BFEF61100F14DC8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8F91AC452BFF31F000FBF222 /* NextPrayerTimeNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerTimeNotifView.swift; sourceTree = "<group>"; };
+		8F9424282C03436D001828F4 /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
+		8F9424312C0345B6001828F4 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		8F9424382C035FBC001828F4 /* PickerPrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPrayerTimesView.swift; sourceTree = "<group>"; };
 		8FE792782BFF8B1800D60FEE /* IsPrayedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrayedTextView.swift; sourceTree = "<group>"; };
 		8FE7927B2BFF8BFD00D60FEE /* BeforeCurrentPrayerName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeCurrentPrayerName.swift; sourceTree = "<group>"; };
 		8FE7927D2BFF8D5800D60FEE /* IsPrayedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrayedView.swift; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 		8F14EFC42BFEF26E00F14DC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F9424302C0345A7001828F4 /* CustomTab */,
+				8F9424272C03433E001828F4 /* PrayerTimes */,
 				8FE792742BFF8ADC00D60FEE /* IsPrayed */,
 				8F14EFFC2BFEF59E00F14DC8 /* NextPrayer */,
 				8F14EFF82BFEF57500F14DC8 /* Onboarding */,
@@ -197,6 +205,7 @@
 		8F14EFC52BFEF27500F14DC8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F9424372C035FA9001828F4 /* PickerPrayerTimes */,
 				8FED5D382C02157D001BA0E3 /* NextPrayerTimeViewHiden */,
 				8FE7927F2BFF8E0000D60FEE /* IsPrayedButton */,
 				8FE792772BFF8B0300D60FEE /* IsPrayedText */,
@@ -371,6 +380,30 @@
 			path = NextPrayerTimeNotif;
 			sourceTree = "<group>";
 		};
+		8F9424272C03433E001828F4 /* PrayerTimes */ = {
+			isa = PBXGroup;
+			children = (
+				8F9424282C03436D001828F4 /* PrayerTimesView.swift */,
+			);
+			path = PrayerTimes;
+			sourceTree = "<group>";
+		};
+		8F9424302C0345A7001828F4 /* CustomTab */ = {
+			isa = PBXGroup;
+			children = (
+				8F9424312C0345B6001828F4 /* CustomTabView.swift */,
+			);
+			path = CustomTab;
+			sourceTree = "<group>";
+		};
+		8F9424372C035FA9001828F4 /* PickerPrayerTimes */ = {
+			isa = PBXGroup;
+			children = (
+				8F9424382C035FBC001828F4 /* PickerPrayerTimesView.swift */,
+			);
+			path = PickerPrayerTimes;
+			sourceTree = "<group>";
+		};
 		8FE792742BFF8ADC00D60FEE /* IsPrayed */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F14EFDB2BFEF3E400F14DC8 /* NextPrayerTimeModel.swift in Sources */,
+				8F9424392C035FBC001828F4 /* PickerPrayerTimesView.swift in Sources */,
 				8F14EFE82BFEF48300F14DC8 /* CurrentPrayerLocationManager.swift in Sources */,
 				8F14EFC92BFEF2BB00F14DC8 /* HexColorManager.swift in Sources */,
 				8F14EFE32BFEF44200F14DC8 /* OnboardingTextView.swift in Sources */,
@@ -539,6 +573,7 @@
 				8F14EFB52BFEF25600F14DC8 /* ContentView.swift in Sources */,
 				8F14EFB32BFEF25600F14DC8 /* PrayPalApp.swift in Sources */,
 				8FED5D3A2C021594001BA0E3 /* NextPrayerTimeViewHiden.swift in Sources */,
+				8F9424292C03436D001828F4 /* PrayerTimesView.swift in Sources */,
 				8FE792792BFF8B1800D60FEE /* IsPrayedTextView.swift in Sources */,
 				8F14EFFA2BFEF58200F14DC8 /* OnboardingView.swift in Sources */,
 				8F91AC462BFF31F000FBF222 /* NextPrayerTimeNotifView.swift in Sources */,
@@ -550,6 +585,7 @@
 				8F14F0012BFEF61100F14DC8 /* LocationManager.swift in Sources */,
 				8F14EFD82BFEF3C500F14DC8 /* NextPrayerTimeView.swift in Sources */,
 				8F14EFF72BFEF56500F14DC8 /* ClockInView.swift in Sources */,
+				8F9424322C0345B6001828F4 /* CustomTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

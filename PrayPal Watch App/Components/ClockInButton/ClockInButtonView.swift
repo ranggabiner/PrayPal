@@ -49,7 +49,7 @@ struct ClockInButtonView: View {
                 .alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("Warning"),
-                        message: Text("Clock in only when you are ready to pray. Are you ready to pray now?"),
+                        message: Text("PRAY NOW only when you are ready to pray \(currentPrayerName). Are you ready to pray \(currentPrayerName)?"),
                         primaryButton: .default(Text("Yes"), action: {
                             // Cancel all notifications
                             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
